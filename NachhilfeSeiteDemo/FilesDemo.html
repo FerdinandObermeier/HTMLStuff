@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+            color: #000!important;
+            background-color: #f1f1f1!important;
+        }
+        .container {
+            text-align: left;
+            width: auto;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-top:10px;
+        }
+        .ueberschrift:hover{
+            cursor:pointer;
+        }
+        .ueberschrift {
+            padding: 10px;
+            font-size: 1em;
+        }
+        .element {
+            padding: 10px;
+            margin: 20px;
+        }
+        .inhalt {
+            padding: 16px;
+            display: none;
+        }
+        .pdf{
+            cursor:pointer; float:right; margin:5px; font-size:1.5em;
+        }
+        .filter{
+            text-align:left;
+            padding:10px;
+        }
+        .filtercontainer{
+            margin:10px;
+            float:left;
+            width:10%;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        .Fächer{
+            float:left;
+            width:85%;
+        }
+        button[type=submit] {
+            background-color: #3c81bd;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin:5px;
+        }
+
+        button[type=submit]:hover {
+            background-color: #3c81bddc;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#Deutsch").click(function () {
+                $("#showfive").toggle("fast");
+            });
+            $("#Englisch").click(function () {
+                $("#showsix").toggle("fast");
+            });
+            $("#Mathematik").click(function () {
+                $("#showseven").toggle("fast");
+            });
+            $("#Französisch").click(function () {
+                $("#showeight").toggle("fast");
+            });
+            $("#Physik").click(function () {
+                $("#shownine").toggle("fast");
+            });
+            $("#Chemie").click(function () {
+                $("#showten").toggle("fast");
+            });
+
+            $("#ausblenden").click(function(){
+                if($("#checkBoxDeutsch").prop("checked")){
+                    $("#Deutsch").hide(500);
+                }
+                if($("#checkBoxEnglisch").prop("checked")){
+                    $("#Englisch").hide(500);
+                }
+                if($("#checkBoxFranzösisch").prop("checked")){
+                    $("#Französisch").hide(500);
+                }
+                if($("#checkBoxMathematik").prop("checked")){
+                    $("#Mathematik").hide(500);
+                }
+                if($("#checkBoxPhysik").prop("checked")){
+                    $("#Physik").hide(500);
+                }
+                if($("#checkBoxChemie").prop("checked")){
+                    $("#Chemie").hide(500);
+                }
+            });
+
+            $("#anzeigen").click(function(){
+                if($("#checkBoxDeutsch").prop("checked")){
+                    $("#Deutsch").show(500);
+                }
+                if($("#checkBoxEnglisch").prop("checked")){
+                    $("#Englisch").show(500);
+                }
+                if($("#checkBoxFranzösisch").prop("checked")){
+                    $("#Französisch").show(500);
+                }
+                if($("#checkBoxMathematik").prop("checked")){
+                    $("#Mathematik").show(500);
+                }
+                if($("#checkBoxPhysik").prop("checked")){
+                    $("#Physik").show(500);
+                }
+                if($("#checkBoxChemie").prop("checked")){
+                    $("#Chemie").show(500);
+                }
+            });
+        });
+
+        
+    </script>
+</head>
+
+<body>
+
+    <div class="filtercontainer">
+        <div class="filter" id="filter1">
+            <input id="checkBoxDeutsch" type="checkbox">
+            <label for="checkBoxDeutsch">Deutsch</label><br>
+            <input id="checkBoxEnglisch" type="checkbox">
+            <label for="checkBoxEnglisch">Englisch</label><br>
+            <input id="checkBoxFranzösisch" type="checkbox">
+            <label for="checkBoxFranzösisch">Französisch</label><br>
+            <input id="checkBoxMathematik" type="checkbox">
+            <label for="checkBoxMathematik">Mathematik</label><br>
+            <input id="checkBoxPhysik" type="checkbox">
+            <label for="checkBoxPhysik">Physik</label><br>
+            <input id="checkBoxChemie" type="checkbox">
+            <label for="checkBoxChemie">Chemie</label><br><br>
+            <button type="submit" id="ausblenden" onclick="ausblenden()">Ausblenden</button>
+            <button type="submit" id="anzeigen" onclick="anzeigen()">Anzeigen</button>
+        </div>
+    </div>
+    <div class="Fächer" id="Fächer">    
+        <div class="container">
+            <div class="ueberschrift" id="Deutsch"> <i class="em em-de" style="margin-right: 10px"></i>Deutsch
+            </div>
+            <div class="inhalt" id="showfive">
+                <div class="element"> 1.Übungsklausur
+                    <span class="pdf">
+                        <a href="test.pdf" download><i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i></a>
+                    </span>
+                    <span class="pdf">
+                        <a href="test.pdf" target="blank"><i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i></a>
+                    </span>
+                </div>
+                <hr>
+                <div class="element"> 2.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="ueberschrift" id="Englisch"> <i class="em em-gb" style="margin-right: 10px"></i>Englisch
+            </div>
+            <div class="inhalt" id="showsix">
+                <div class="element"> 1.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <hr>
+                <div class="element"> 2.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="ueberschrift" id="Französisch"> <i class="em em-fr" style="margin-right: 10px"></i>Französisch
+            </div>
+            <div class="inhalt" id="showeight">
+                <div class="element"> 1.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <hr>
+                <div class="element"> 2.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="ueberschrift" id="Mathematik"> <i class="em em-heavy_division_sign" style="margin-right: 10px"></i>Mathematik
+            </div>
+            <div class="inhalt" id="showseven">
+                <div class="element"> 1.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <hr>
+                <div class="element"> 2.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="ueberschrift" id="Physik"> <i class="em em-boom" style="margin-right: 10px"></i>Physik
+            </div>
+            <div class="inhalt" id="shownine">
+                <div class="element"> 1.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <hr>
+                <div class="element"> 2.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="ueberschrift" id="Chemie"> <i class="em em-factory" style="margin-right: 10px"></i>Chemie
+            </div>
+            <div class="inhalt" id="showten">
+                <div class="element"> 1.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <hr>
+                <div class="element"> 2.Übungsklausur
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-arrow_down" aria-hidden="true"></i>
+                    </span>
+                    <span class="pdf">
+                        <i style="color:#3c81bd" class="em em-eye" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
