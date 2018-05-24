@@ -156,23 +156,6 @@
     </style>
 
     <script>
-
-    	/*window.onload = function(){
-    		var welcome = document.getElementById("welcome");
-    		var rezensionen = document.getElementById("rez");
-    		var files = document.getElementById("fileform");
-    		var contact = document.getElementById("contact");
-    		var subjects = document.getElementById("subjects");
-    		rezensionen.style.display="none";
-    		files.style.display = "none";
-    		contact.style.display = "none";
-    		subjects.style.display = "none";
-    		welcome.style.marginBottom = "0px";
-    		/*setTimeout(function(){ 
-    			
-    			right1.style.marginLeft = "10px";},1000
-    			);
-    	}*/
         $(document).ready(function () {
             $("#showrezensionen").click(function () {
                 $("#rezensionen").toggle("fast");
@@ -207,74 +190,13 @@
                 $("#loaderIcon").show();
                 event.preventDefault();
                 setTimeout(function(){$("#loaderIcon").hide()}, 1000);
-                //$("#password").focus();
                 setTimeout(function(){window.location.href = "FilesDemo.html"},1000);
-/*
-                var $form = $(this);
 
-                var $inputs = $form.find("input, select, button, textarea");
-
-                var serializedData = $form.serialize();
-
-                $inputs.prop("disabled", true);
-
-                request = $.ajax({
-                    url: "download.php",
-                    type: "post",
-                    data: serializedData,
-                    success: function (response) {
-                        // Parse here
-                        var json = JSON.parse(response);
-                        // You should get an object now
-                        // Now you should be able get the boolean here
-                        if (json.success === true) {
-                            // Try redirecting this way here
-                            window.location = "Files.php";
-                        }
-                        else {
-                            $("#wrongpassword").html(json.msg);
-                        }*/
-                        
-                        
-                    //},
-                    //error: function (response) {
-                      //  alert("Hoppla! Hier ist ein Fehler aufgetreten. Bitte versuche es später erneut.");
-                    //}
-                //});
-
-
-                /*request.done(function (response, textStatus, jqXHR){
-                    // Log a message to the console
-                    if(response=="Success"){
-                        window.location.replace("Files.php");
-                    }else{
-                        $("#wrongpassword").html(response);
-                    }
-                    console.log("Hooray, it worked!");
-                });
-            
-                // Callback handler that will be called on failure
-                request.fail(function (jqXHR, textStatus, errorThrown){
-                    // Log the error to the console
-                    console.error(
-                        "The following error occurred: "+
-                        textStatus, errorThrown
-                    );
-                });*/
-
-                // Callback handler that will be called regardless
-                // if the request failed or succeeded
                 request.always(function () {
-                    // Reenable the inputs
                     $inputs.prop("disabled", false);
                 });
             });
         });
-
-        /*$("#contact").submit(function(){
-            alert("works");
-            window.location.replace("Success.html")
-        });*/
     </script>
 
 </head>
@@ -282,18 +204,6 @@
 
 <body>
         <div class="rowpadding">
-        <!--    <div class="third" id="left">
-                <div class="Me white text-gray" id="me">
-                    <div class="displaycontainer">
-                        <img src="Me.jpg" style="height:auto; width:100%;"></img>
-                        <div class="topleft text-container">
-                            <h1>Michael Theiler</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
--->
-
             <div class="outer" id="fullsize">
                 <div class="margin-bottom white" id="welcome">
                     <div class="text-container">
@@ -343,7 +253,7 @@
                                 <i class="em em-thinking_face" style="padding-right:10px;" aria-hidden="true"></i>Das denken meine Schüler über mich...</h2>
                         </b>
                     </div>
-                    <div class="text-container"><!--??-->
+                    <div class="text-container">
                         <div class="inhalt" id="rezensionen">
                             <p>Blablablablabla</p>
                         </div>
